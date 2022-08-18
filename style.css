@@ -1,0 +1,40 @@
+* {
+    margin: 5px;
+}
+body {
+    width: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-width: 2px;
+    border-style: dashed;
+    border-color: #f00;
+    border-radius: 10px;
+}
+
+button {
+    margin: 20px;
+}
+
+h4 {
+    margin-top: 25px;
+}
+
+#altura {
+    width: 150px;
+    margin-top: 5px;
+}
+#largura {
+    width: 150px;
+    margin-top: 5px;
+}
+
