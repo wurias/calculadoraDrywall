@@ -12,9 +12,9 @@ function calculadora (larg, alt) {
     var alt = parseFloat(altura.value);
 
     //METRO QUADRADO
-    var metroQuadrado = larg * alt;
+    var metroQuadrado = larg * alt;    
     escreva ('Largura: [' + larg.toFixed(2) + '] Comprimento: [' + alt.toFixed(2) + ']')
-    escreva ('<br>Total: ' + metroQuadrado.toFixed(2) + 'm²');
+    escreva ('<br><br>Total: ' + metroQuadrado.toFixed(2) + 'm²<br>');
 
     //QUANTIDADE CANTONEIRA
     var cantoneira = 2 * (larg + alt) / 3;
