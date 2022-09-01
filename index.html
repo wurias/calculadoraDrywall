@@ -7,19 +7,20 @@
     <link rel="stylesheet" href="style.css">
     <title>Calcula Drywall</title>    
 </head>
-<body>
-    
-    <h2>Rebaixamento Drywall</h2>
-    
-    <div id="form">
-        <h4>LARGURA</h4>
-        <input type="text" name="largura" id="largura" autofocus> 
-        <h4>COMPRIMENTO</h4>
-        <input type="text" name="altura" id="altura">    
-        <button name="btnCalcular" onclick="calculadora()">Calcular</button>
+<body>    
+    <h2>Calcule Material para <br> Rebaixamento Drywall</h2>
+    <div id="calculando">
+        <label for="largura">LARGURA</label>
+        <input type="text" id="largura" autofocus placeholder="exemplo: 1.20">
+        <label for="altura">COMPRIMENTO</label>
+        <input type="text" id="altura" placeholder="exemplo: 2.40">
+        <button type="button" onclick="listaGeral()">Calcular</button>
     </div>
     
-    <script src="calculaDrywall.js"></script>
+    <h2>Lista de Material</h2>
+    <textarea name="resposta" id="resposta" cols="30" rows="10"></textarea>
     
+    
+    <script src="calculaDrywall.js"></script>    
 </body>
 </html>
