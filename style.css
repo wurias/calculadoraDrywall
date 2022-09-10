@@ -35,6 +35,7 @@ label {
 }
 
 #resposta {
+    width: 300px;
     resize: none;
     border-radius: 10px;
     text-align: center;
