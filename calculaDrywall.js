@@ -117,7 +117,8 @@ function uniaoPerfil(larg, alt) {
     }
 }
 
-function listaGeral() {
+function listaGeral() 
+    {
     metroQuadrado();
     cantoneira();
     perfilF530();
@@ -128,4 +129,22 @@ function listaGeral() {
     fitaJt();
 
     resposta.value = quadradoTotal + cantoTotal + f530Total + stTotal + parafuso25Total + massaPronta + massaPo + fita;
-}
+    }
+
+
+function gerarPdf()
+    {
+        resposta.value = cantoTotal + f530Total + stTotal + parafuso25Total + massaPronta + massaPo + fita;
+
+        // Instanciar o jsPDF
+        var doc = new jsPDF();
+
+        // Texto que deve estar no PDF
+        doc.text("LISTA DE MATERIAL \n \n" + resposta.value, 10, 10);
+
+        // Gerar PDF
+        doc.save('lista_material.pdf');
+    }
+            
+                
+            
