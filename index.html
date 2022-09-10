@@ -19,11 +19,19 @@
         <input type="text" id="altura" placeholder="exemplo: 2.40">
         <button type="button" onclick="listaGeral()">Calcular</button>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+        integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
+        crossorigin="anonymous"></script>
     
-    <h2>Lista de Material</h2>
-    <textarea name="resposta" id="resposta" cols="30" rows="10"></textarea>
+    <div class="material-lista">
+        <h2>Lista de Material</h2>
+        <button class="btn_gerarPdf" onclick="gerarPdf()">Gerar PDF</button>
+    </div>
     
+    <textarea name="resposta" id="resposta" cols="30" rows="10"></textarea>    
     
-    <script src="calculaDrywall.js"></script>    
+    <script src="calculaDrywall.js"></script>
+
 </body>
 </html>
