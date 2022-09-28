@@ -1,12 +1,21 @@
 //VARIAVEIS 
-var largura = document.querySelector('#largura');
-var altura = document.querySelector('#altura');
-var resposta = document.querySelector('#resposta');
+var largura = document.getElementById('largura');
+var altura = document.getElementById('altura');
+var resposta = document.getElementById('resposta');
 
-var quadradoTotal, cantoTotal, f530, f530Total, stTotal, parafuso25Total, massaPronta, massaPo, fita, uniaoF530;
+var quadradoTotal, 
+    cantoTotal, 
+    f530, 
+    f530Total, 
+    stTotal, 
+    parafuso25Total, 
+    massaPronta, 
+    massaPo, 
+    fita, 
+    uniaoF530;
 
 
-//FUNCAO CALCULA METRO-QUADRADO
+// FUNCAO CALCULAR METRO-QUADRADO
 
 function metroQuadrado(larg, alt) {
     var larg = parseFloat(largura.value);
@@ -16,7 +25,7 @@ function metroQuadrado(larg, alt) {
     quadradoTotal = "Total: " + metroQuadrado.toFixed(2) + "m² \n";
 }
 
-//FUNCAO CALCULA CANTONEIRA
+//FUNCAO CALCULAR QUANTIDADE CANTONEIRA
 
 function cantoneira(larg, alt) {
     var larg = parseFloat(largura.value);
@@ -27,7 +36,7 @@ function cantoneira(larg, alt) {
     cantoTotal = "Cantoneira: " + cantoneiraTotal + " und. \n";
 }
 
-//FUNCAO CALCULA PERFIL F530
+//FUNCAO CALCULAR QUANTIDADE PERFIL F530
 
 function perfilF530(larg, alt) {
     var larg = parseFloat(largura.value);
@@ -51,7 +60,7 @@ function perfilF530(larg, alt) {
     }
 }
 
-//FUNCAO CALCULA PLACA ST TAMANDO PADRAO 180 X 120 ARREDONDANDO PARA MAIS
+//FUNCAO CALCULAR PLACA ST TAMANDO PADRAO 180 X 120 ARREDONDANDO PARA MAIS
 
 function placaST(larg, alt) {
     var larg = parseFloat(largura.value);
@@ -63,7 +72,7 @@ function placaST(larg, alt) {
 
 }
 
-//CALCULA parafuso TA-25
+//CALCULAR PARAFUSO TA-25
 
 function parafusoTa25(larg, alt) {
     var larg = parseFloat(largura.value);
@@ -75,7 +84,7 @@ function parafusoTa25(larg, alt) {
 
 }
 
-//CALCULA MASSA PARA TRATAMENTO DE JUNTA 
+//CALCULAR MASSA PARA TRATAMENTO DE JUNTA, MASSA EM PÓ RENDE MAIS
 
 function massaPr(larg, alt) {
     var larg = parseFloat(largura.value);
