@@ -1,4 +1,4 @@
-//VARIAVEIS 
+// VARIAVEIS 
 var largura = document.getElementById('largura');
 var altura = document.getElementById('altura');
 var resposta = document.getElementById('resposta');
@@ -15,7 +15,7 @@ var quadradoTotal,
     uniaoF530;
 
 
-// FUNCAO CALCULAR METRO-QUADRADO
+// CALCULA METRO-QUADRADO
 
 function metroQuadrado(larg, alt) {
     var larg = parseFloat(largura.value);
@@ -25,7 +25,7 @@ function metroQuadrado(larg, alt) {
     quadradoTotal = "Total: " + metroQuadrado.toFixed(2) + "m² \n";
 }
 
-//FUNCAO CALCULAR QUANTIDADE CANTONEIRA
+// CALCULA QUANTIDADE CANTONEIRA
 
 function cantoneira(larg, alt) {
     var larg = parseFloat(largura.value);
@@ -36,7 +36,7 @@ function cantoneira(larg, alt) {
     cantoTotal = "Cantoneira: " + cantoneiraTotal + " und. \n";
 }
 
-//FUNCAO CALCULAR QUANTIDADE PERFIL F530
+// CALCULA QUANTIDADE PERFIL F530
 
 function perfilF530(larg, alt) {
     var larg = parseFloat(largura.value);
@@ -60,7 +60,7 @@ function perfilF530(larg, alt) {
     }
 }
 
-//FUNCAO CALCULAR PLACA ST TAMANDO PADRAO 180 X 120 ARREDONDANDO PARA MAIS
+// CALCULA PLACA ST TAMANHO PADRAO 180 X 120 ARREDONDANDO PARA MAIS
 
 function placaST(larg, alt) {
     var larg = parseFloat(largura.value);
@@ -72,7 +72,7 @@ function placaST(larg, alt) {
 
 }
 
-//CALCULAR PARAFUSO TA-25
+// CALCULA PARAFUSO TA-25
 
 function parafusoTa25(larg, alt) {
     var larg = parseFloat(largura.value);
@@ -84,7 +84,13 @@ function parafusoTa25(larg, alt) {
 
 }
 
-//CALCULAR MASSA PARA TRATAMENTO DE JUNTA, MASSA EM PÓ RENDE MAIS
+/* 
+
+CALCULA MASSA PARA TRATAMENTO DE JUNTA 
+massaPr = Massa Pronta
+massaEmPo = Massa em pó (Rende Mais)
+
+*/
 
 function massaPr(larg, alt) {
     var larg = parseFloat(largura.value);
@@ -104,6 +110,8 @@ function massaEmPo(larg, alt) {
     massaPo = "Massa em Pó: " + Math.ceil((massaTotal * 0.35)) + " Kg \n";
 }
 
+// CALCULA QUANTIDADE EXATA RECOMENDADA DE FITA-JT
+
 function fitaJt(larg, alt) {
     var larg = parseFloat(largura.value);
     var alt = parseFloat(altura.value);
@@ -112,6 +120,8 @@ function fitaJt(larg, alt) {
     var fitaTotal = (quadrado + (5 * quadrado) / 100);
     fita = "Fita JT: " + Math.ceil(fitaTotal * 1.5) + " Metros \n";
 }
+
+// CALCULA UNIAO PARA PERFIS F530
 
 function uniaoPerfil(larg, alt) {
     var larg = parseFloat(largura.value);
@@ -125,6 +135,8 @@ function uniaoPerfil(larg, alt) {
         uniaoF530 = "Uniao F530: " + Math.ceil(perfil) + " und. \n"
     }
 }
+
+// FUNÇÃO PARA EXECUTAR TODOS OS CÁLCULOS E IMPRIMIR NA TELA
 
 function listaGeral() 
     {
@@ -140,6 +152,7 @@ function listaGeral()
     resposta.value = quadradoTotal + cantoTotal + f530Total + stTotal + parafuso25Total + massaPronta + massaPo + fita;
     }
 
+// FUNCAO PARA GERAR PDF COM A LISTA DE MATERIAL
 
 function gerarPdf()
     {
