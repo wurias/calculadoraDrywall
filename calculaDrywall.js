@@ -127,6 +127,10 @@ function uniaoPerfil(larg, alt) {
         var calcf530 = (alt / 0.6);
         uniaoF530 = "União F530: " + Math.ceil(calcf530) + " und.";
     }
+    else if ((larg > alt) && (alt <= 3)){
+        var calcf530 = (larg / 0.6);
+        uniaoF530 = "Uniao F530: 0 und.";
+    } 
     else if ((larg > alt) && (alt <= 6) && (alt > 3)){
         var calcf530 = (larg / 0.6);
         uniaoF530 = "União F530: " + Math.ceil(calcf530) + " und.";
