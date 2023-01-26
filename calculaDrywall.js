@@ -5,15 +5,14 @@ var resposta = document.getElementById('resposta');
 
 var quadradoTotal, 
     cantoTotal, 
-    f530, 
+    f530,
     f530Total, 
     stTotal, 
     parafuso25Total, 
     massaPronta, 
     massaPo, 
-    fita, 
+    fita,
     uniaoF530;
-
 
 // CALCULA METRO-QUADRADO
 
@@ -47,16 +46,14 @@ function perfilF530(larg, alt) {
         var restoPerfil = alt - 3;
         var parcialPerfil = (perfilF530 * restoPerfil) / 3;
         f530 = Math.ceil(parcialPerfil + perfilF530);
-        f530Total = "Perfil F530: " + Math.ceil(parcialPerfil + perfilF530) + " und. \n";
-
+        f530Total = "Perfil F530: " + f530 + " und. \n";
 
     } else {
-
         var perfilF530 = alt / 0.60;
         var restoPerfil = larg - 3;
         var parcialPerfil = (perfilF530 * restoPerfil) / 3;
         f530 = Math.ceil(parcialPerfil + perfilF530);
-        f530Total = "Perfil F530: " + Math.ceil(parcialPerfil + perfilF530) + " und. \n";
+        f530Total = "Perfil F530: " + f530 + " und. \n";
     }
 }
 
@@ -81,7 +78,6 @@ function parafusoTa25(larg, alt) {
     var quadrado = alt * larg;
     var parafuso = (quadrado + ((5 * quadrado) / 100)) * 12;
     parafuso25Total = "Parafuso-St25: " + Math.ceil(parafuso) + " und. \n";
-
 }
 
 /* 
@@ -121,23 +117,35 @@ function fitaJt(larg, alt) {
     fita = "Fita JT: " + Math.ceil(fitaTotal * 1.5) + " Metros \n";
 }
 
-// CALCULA UNIAO PARA PERFIS F530
+// CALCULA UNIAO PARA PERFIS F530 
 
 function uniaoPerfil(larg, alt) {
-    var larg = parseFloat(largura.value);
-    var alt = parseFloat(altura.value);
+  var larg = parseFloat(largura.value);
+  var alt = parseFloat(altura.value);
 
-    if ((larg > alt) && (alt > 3)) {
-        var perfil = larg / 0.60;
-        uniaoF530 = "Uniao F530: " + Math.ceil(perfil) + " und. \n"
-    } else if ((alt > larg) && (larg > 3)) {
-        var perfil = alt / 0.60;
-        uniaoF530 = "Uniao F530: " + Math.ceil(perfil) + " und. \n"
+    if ((alt > larg) && (larg > 3) && (larg <= 6)){
+        var calcf530 = (alt / 0.6);
+        uniaoF530 = "União F530: " + Math.ceil(calcf530) + " und.";
     }
+    else if ((larg > alt) && (alt <= 6) && (alt > 3)){
+        var calcf530 = (larg / 0.6);
+        uniaoF530 = "União F530: " + Math.ceil(calcf530) + " und.";
+    } 
+    else if ((larg > 3) && (larg <= 6) && (larg = alt)){
+        var calcf530 = (larg / 0.6);
+        uniaoF530 = "Uniao F530: " + Math.ceil(calcf530) + " und.";
+    }
+    else if ((larg <= 3) && (larg = alt)){
+        uniaoF530 = "Uniao F530: 0 und.";
+    }
+    else {
+        uniaoF530 = "Ainda Não Fiz"
+    }
+            // PAREI AQUI... PRECISO CRIAR FUNCAO PARA CALCULAR UNIAO F530
 }
 
-// FUNÇÃO PARA EXECUTAR TODOS OS CÁLCULOS E IMPRIMIR NA TELA
 
+// FUNÇÃO PARA EXECUTAR TODOS OS CÁLCULOS E IMPRIMIR NA TELA
 function listaGeral() 
     {
     metroQuadrado();
@@ -148,15 +156,16 @@ function listaGeral()
     massaPr();
     massaEmPo();
     fitaJt();
+    uniaoPerfil();
 
-    resposta.value = quadradoTotal + cantoTotal + f530Total + stTotal + parafuso25Total + massaPronta + massaPo + fita;
+    resposta.value = quadradoTotal + cantoTotal + f530Total + stTotal + parafuso25Total + massaPronta + massaPo + fita  + uniaoF530;
     }
 
 // FUNCAO PARA GERAR PDF COM A LISTA DE MATERIAL
 
 function gerarPdf()
     {
-        resposta.value = cantoTotal + f530Total + stTotal + parafuso25Total + massaPronta + massaPo + fita;
+        resposta.value = cantoTotal + f530Total + stTotal + parafuso25Total + massaPronta + massaPo + fita + uniaoF530;
 
         // Instanciar o jsPDF
         var doc = new jsPDF();
@@ -167,6 +176,3 @@ function gerarPdf()
         // Gerar PDF
         doc.save('lista_material.pdf');
     }
-            
-                
-            
