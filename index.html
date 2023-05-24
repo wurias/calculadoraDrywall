@@ -1,74 +1,132 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    
-    <!--
-    <link rel="stylesheet" href="reset.css">
-            
-    -->
-    <title>Calcula Drywall</title>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Calculadora Drywall</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Reveal
+  * Updated: Mar 10 2023 with Bootstrap v5.2.3
+  * Template URL: https://bootstrapmade.com/reveal-bootstrap-corporate-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 
-<body>
-  <div class="container-fluid p-0">
-    <header class="text-center p-1 text-bg-dark" style="font-family: 'Roboto Condensed', sans-serif;">
-      <p class="fs-2 m-0">Rebaixamento Drywall</p>
-      <p class="fs-5 m-0">Calcule seu Material</p>            
-    </header>
-  </div>
+<body style="background-color: aliceblue;">
+ <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-between">
 
-  <div class="text-secondary px-4 text-center" style="background-color: rgb(58, 58, 58);">
-
-    <div class="py-2">
-
-      <h1 class="fs-5 fw-bold text-white" for="largura" >LARGURA</h1>
-      <input type="text" id="largura" autofocus placeholder="exemplo: 1.20">
-
-      <h1 class="fs-5 fw-bold text-white mt-2" for="altura" >COMPRIMENTO</h1>
-      <input type="text" id="altura" placeholder="exemplo: 2.40">
-
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
-        integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous">
-      </script>
-
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-3">
-        <button type="button" class="btn btn-outline-warning btn-lg px-5 me-sm-3 fw-bold" onclick="listaGeral()">Calcular</button>
-        <button type="button" class="btn btn-outline-light btn-lg px-4" onclick="gerarPdf()">Salvar</button>        
+      <div id="logo">
+        <h1><a href="index.html">Calc<span>Drywall</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a>-->
       </div>
 
-      <div class="text-info pt-1">
-        <hr>
-      </div>
-      <div class="col-lg-6 mx-auto">
-        <textarea name="resposta" id="resposta" cols="30" rows="10" style="text-align: center; border-radius: 5px; resize: none;"></textarea>        
-      </div>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Início</a></li>
+          <li><a class="nav-link scrollto" href="#about">Sobre</a></li>                            
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav>
 
     </div>
 
-    <div class="container-flex pb-2">
-      <footer>
-        <p class="signature"> 
-          <a style="text-decoration: none; color: white;" href="https://github.com/wurias/calculadoraDrywall" target="_blank">WuRiAs            
-          </a>
-        </p>
-        <img src="img/github-icon.png" alt="github logo" width="40px" height="40px">
-      </footer>
+  </header><!-- End Header -->
+
+  <!-- ======= hero Section ======= -->
+  <section id="hero">
+
+    <div class="hero-content" data-aos="fade-up">
+      <h2>Calcule <span>exatamente</span><br>o material da sua obra.</h2>
+      <div>
+        <a href="#about" class="btn-get-started scrollto">Divisórias</a>
+        <a href="pages/rebaixamento_page.html" class="btn-projects scrollto">Rebaixamento</a>
+      </div>
     </div>
-    
-  </div>
+
+    <div class="hero-slider swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image: url('assets/img/hero-carousel/1.jpg');"></div>
+        <div class="swiper-slide" style="background-image: url('assets/img/hero-carousel/2.jpg');"></div>
+        <div class="swiper-slide" style="background-image: url('assets/img/hero-carousel/3.jpg');"></div>
+        <div class="swiper-slide" style="background-image: url('assets/img/hero-carousel/4.jpg');"></div>
+        <div class="swiper-slide" style="background-image: url('assets/img/hero-carousel/5.jpg');"></div>
+      </div>
+    </div>
+
+  </section><!-- End Hero Section -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-6 about-img">
+            <img src="assets/img/calculator.png" height="300px" alt="">
+          </div>
+
+          <div class="col-lg-6 content">
+            <h2>Ganhe tempo no cálculo e orçamento do material.</h2>
+            <h3>Insira as dimensões do seu projeto e tenha em mãos a lista exata de material necessário.</h3>
+
+            <ul>
+              <li><i class="bi bi-check-circle"></i> Quantidade exata dos itens.</li>
+              <li><i class="bi bi-check-circle"></i> Divisórias (Parede) e Rebaixamento.</li>
+              <li><i class="bi bi-check-circle"></i> Uso simplificado e intuitivo.</li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </section><!-- EXCLUIR DAQUI PRA BAIXO -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Calculadora <strong>Drywall</strong>.
+      </div>      
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>  
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 </body>
-
-<script src="calculaDrywall.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>
