@@ -15,9 +15,15 @@
 
 <body>
   <div class="container-fluid p-0">
-    <header class="text-center p-1 text-bg-dark" style="font-family: 'Roboto Condensed', sans-serif;">      
-      <p class="fs-2 m-0">Rebaixamento Drywall</p>
-      <p class="fs-5 m-0">Calcule seu Material</p>               
+    <header id="header" class="d-flex align-items-center">
+      <div class="container d-flex justify-content-between">
+  
+        <div id="logo">
+          <h1><a href="../index.html">Calc<span>Drywall</span></a></h1>
+        </div>
+  
+      </div>
+  
     </header>
   </div>
 
@@ -37,7 +43,7 @@
       </script>
 
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mt-3">
-        <button type="button" class="btn btn-warning btn-lg px-5 me-sm-3 fw-bold" onclick="listaGeral()">Calcular</button>
+        <button type="button" class="btn btn-outline-primary btn-lg px-5 me-sm-3 fw-bold" onclick="listaGeral()">Calcular</button>
         <button type="button" class="btn btn-success btn-lg px-4" onclick="gerarPdf()">Salvar</button>        
       </div>
 
